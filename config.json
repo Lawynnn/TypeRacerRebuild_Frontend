@@ -1,0 +1,4 @@
+{
+    "backend_url": "http://localhost:3001",
+    "socket_url": "http://localhost:3001/socket"
+}

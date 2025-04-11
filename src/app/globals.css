@@ -4,8 +4,86 @@
 @custom-variant light (&:where([data-theme=light], [data-theme=light] *));
 @custom-variant show (&:where([data-show=true], [data-show=true] *));
 
+@theme {
+    --animate-cursor-blink: cursor-blink .9s ease-in infinite;
+    @keyframes cursor-blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+
+    --animate-shake: shake 0.5s ease-in-out infinite;
+    @keyframes shake {
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(-2px);
+        }
+
+        50% {
+            transform: translateX(2px);
+        }
+
+        75% {
+            transform: translateX(-2px);
+        }
+    }
+}
+
+
+*[data-pattern="grid"] {
+    --color: color-mix(in oklab, var(--color-white) 10%, transparent);
+    --size: 20px 20px;
+    background-image: linear-gradient(
+            to right,
+            var(--color) 1px,
+            transparent 1px
+        ),
+        linear-gradient(to bottom, var(--color) 1px, transparent 1px);
+    background-size: var(--size);
+}
+
+*[data-pattern="dots"] {
+    --color: color-mix(in oklab, var(--color-white) 10%, transparent);
+    --size: 10px 10px;
+    background-image: radial-gradient(
+        circle,
+        var(--color) 1px,
+        transparent 1px
+    );
+    background-size: var(--size);
+}
+
+*[data-pattern="stripes"] {
+    --color: color-mix(in oklab, var(--color-white) 10%, transparent);
+    --deg: -45deg;
+    --size: 8px 8px;
+    background-image: linear-gradient(
+        var(--deg),
+        var(--color) 6.25%,
+        transparent 6.25%,
+        transparent 50%,
+        var(--color) 50%,
+        var(--color) 56.25%,
+        transparent 56.25%,
+        transparent 100%
+    );
+    background-size: var(--size);
+}
+
+
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+}
+
+body {
+    font-family: var(--font-lexend);
 }

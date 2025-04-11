@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Lexend, Poppins } from "next/font/google";
 import "./globals.css";
+import { SocketProvider } from "@/hooks/useSocket";
+import { ErrorProvider } from "@/hooks/useError";
+import { TabProvider } from "@/hooks/useTabs";
 
 const lexendFont = Lexend({
     variable: "--font-lexend",
@@ -27,9 +30,13 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${lexendFont.variable} ${poppinsFont.variable} antialiased`}
+                className={`${lexendFont.variable} ${poppinsFont.variable} antialiased h-screen w-full bg-zinc-950 text-zinc-50`}
             >
-                {children}
+                <SocketProvider>
+                    <TabProvider>
+                        <ErrorProvider>{children}</ErrorProvider>
+                    </TabProvider>
+                </SocketProvider>
             </body>
         </html>
     );
