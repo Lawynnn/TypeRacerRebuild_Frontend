@@ -1,4 +1,4 @@
 {
-    "backend_url": "https://typeracer.lawyn.xyz:3001",
-    "socket_url": "https://typeracer.lawyn.xyz:3001/socket"
+    "backend_url": "https://typeracer.lawyn.xyz",
+    "socket_url": "https://typeracer.lawyn.xyz/socket"
 }
