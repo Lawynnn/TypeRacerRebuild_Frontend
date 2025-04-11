@@ -1,6 +1,6 @@
 export default {
-    backend_url: "http://localhost:3001",
-    socket_url: "http://localhost:3001/socket",
+    backend_url: "https://typeracer.lawyn.xyz",
+    socket_url: "https://typeracer.lawyn.xyz/socket",
     tabs: {
         home: 0,
         room: 1,
